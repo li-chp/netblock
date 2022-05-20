@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=D:\Code Repository\netblock\netblock\venv"
+set "VIRTUAL_ENV=D:\Code Repository\netblockProject\netblock\venv"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

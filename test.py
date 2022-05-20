@@ -1,14 +1,15 @@
 from flask import Flask
 import datetime
-from flask_apscheduler  import APScheduler
+from flask_apscheduler import APScheduler
 app = Flask(__name__)
-aps = APScheduler()
-
 
 @app.route("/")
 def index():
     return "<h2 style='color:red'>Hello World</h2>"
 
+@app.route('/h')
+def hello_world():
+    return 'Hello World!'
 
 class Config(object):
     JOBS = [
@@ -28,14 +29,9 @@ def task(a, b):
 
 
 if __name__ == '__main__':
-    app = Flask(__name__)
-    app.config.from_object(Config())
 
+    app.config.from_object(Config())
     scheduler = APScheduler()
     scheduler.init_app(app)
     scheduler.start()
-    app.run()
-    # app.run(port=8000)
-
-# if __name__ == "__main__":
-#     app.run()
+    app.run(host="0.0.0.0", port=5000, debug=True)

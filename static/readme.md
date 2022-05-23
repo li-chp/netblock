@@ -1,0 +1,1 @@
+# static文件夹用来存放css、JavaScript、image等静态资源文件

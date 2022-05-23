@@ -1,2 +1,6 @@
 flask==1.1.4
 flask-apscheduler==1.9.0
+python-dotenv==0.5.1
+pyyaml==5.1
+requests==2.18.0
+pymysql==0.7.0

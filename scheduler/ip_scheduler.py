@@ -7,11 +7,15 @@
 @Email   : li-chp@neusoft.com
 @Software: PyCharm
 """
-from db import driver as db_driver
 from anguan.driver import anguanDriver
+from common.log import logging
+
+LOG = logging.getLogger(__name__)
+
 
 def getip_task():
     try:
+        LOG.info('getip_task')
         anguanDriver().getIp()
     except Exception as e:
-        print e
+        LOG.error(e)

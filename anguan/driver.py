@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-@File    : driver.py
+@File    : db.py
 @Time    : 2022/5/23 14:10
 @Author  : lichp
 @Email   : li-chp@neusoft.com
 @Software: PyCharm
 """
 
-from db import driver
+from common import db
 import json
-import logging
+from common.log import logging
 import requests
 import yaml
 
@@ -20,7 +20,7 @@ HEADERS = {'content-type': 'application/json;charset=utf-8'}
 def http_request(method, url, **kwargs):
     resp = requests.request(method, url, **kwargs)
     sql = "insert into request_log_t(url, req, resp, status, create_time) values (%s, %s, %s, %s, now())"
-    driver.updateByParameters(sql, params=(url, json.dumps(kwargs['data']), json.dumps(json.loads(resp.content)), resp.status_code))
+    db.updateByParameters(sql, params=(url, json.dumps(kwargs['data']), json.dumps(json.loads(resp.content)), resp.status_code))
 
 
 class anguanDriver():

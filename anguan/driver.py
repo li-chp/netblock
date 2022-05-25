@@ -9,8 +9,8 @@
 """
 
 from common import db
-import json
 from common.log import logging
+import json
 import requests
 import yaml
 

@@ -30,21 +30,3 @@ def test():
                            my_list=my_list,
                            my_dict=my_dict
                            )
-
-@demo.route('/getip', methods=['POST'])
-def getip():
-
-    resp = """
-    {
-	"code":"0",
-	"msg":"20220202153015",
-    "data": {
-		"closeip": ["39.56.13.177",
-			"19.333.14.1/24",
-			"39.156.34.100-39.156.34.200"
-		],
-		"openip": ["39.39.39.39", "38.56.39.1/24"]
-	}}
-    """
-    return json.loads(resp)
-

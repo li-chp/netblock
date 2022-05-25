@@ -22,7 +22,7 @@ sh = logging.StreamHandler()
 logger.addHandler(sh)
 
 # 保存在文件中 文件处理器
-fh = logging.FileHandler(log_file, encoding='utf-8')
+fh = logging.FileHandler(log_file)
 # 把日志信息添加到文件中去
 logger.addHandler(fh)
 
